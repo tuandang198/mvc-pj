@@ -9,7 +9,7 @@ class TaskRepository
 
     public function __construct()
     {
-        $this->taskResourceModel = new TaskResurceModel();
+        $this->taskResourceModel = new TaskResurceModel('tasks', 'id', new TaskModel());
     }
 
     public function getAll(){

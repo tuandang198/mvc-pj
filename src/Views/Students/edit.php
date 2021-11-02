@@ -2,7 +2,7 @@
 <form method='post' action='#'>
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" placeholder="Enter a name" name="name" value ="<?php if (isset($student["name"])) echo $student["name"];?>">
+        <input type="text" class="form-control" id="name" placeholder="Enter a name" name="name" value ="<?php if ($student->getName() !== null) echo $student->getName();?>">
     </div>
 
     <div class="form-group">

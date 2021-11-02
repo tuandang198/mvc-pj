@@ -4,6 +4,7 @@ namespace MVC\Core;
 
 use MVC\Config\Database;
 use MVC\Core\Model;
+use PDO;
 
 class ResourceModel implements ResourceModelInterface
 {
@@ -57,19 +58,20 @@ class ResourceModel implements ResourceModelInterface
 
     public function getAll()
     {
+        $class = get_class($this->model);
         $sql = "SELECT * FROM $this->table";
         $req = Database::getBdd()->prepare($sql);
         $req->execute();
-        return($req->fetchAll());
+        return($req->fetchAll(PDO::FETCH_CLASS,$class));
 
     }
 
     public function getId($id)
-    {
+    {   $class = get_class($this->model);
         $sql = "SELECT * FROM $this->table WHERE $this->id=$id";
         $req = Database::getBdd()->prepare($sql);
         $req->execute();
-        return ($req->fetch());
+        return ($req->fetchObject($class));
 
     }
 

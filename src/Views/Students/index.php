@@ -13,12 +13,12 @@
         <?php
         foreach ($students as $student)
         {
-            if($student['gender']==1){$gender= "Male";}else{$gender = "Female";}
+            if($student->getGender()==1){$gender= "Male";}else{$gender = "Female";}
             echo '<tr>';
-            echo "<td>" . $student['id'] . "</td>";
-            echo "<td>" . $student['name'] . "</td>";
+            echo "<td>" . $student->getId() . "</td>";
+            echo "<td>" . $student->getName() . "</td>";
             echo "<td>" . $gender  . "</td>";
-            echo "<td class='text-center'><a class='btn btn-info btn-xs' href='/mvc/students/edit/" . $student["id"] . "' ><span class='glyphicon glyphicon-edit'></span> Edit</a> <a href='/mvc/students/delete/" . $student["id"] . "' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
+            echo "<td class='text-center'><a class='btn btn-info btn-xs' href='/mvc/students/edit/" . $student->getId() . "' ><span class='glyphicon glyphicon-edit'></span> Edit</a> <a href='/mvc/students/delete/" . $student->getId() . "' class='btn btn-danger btn-xs'><span class='glyphicon glyphicon-remove'></span> Del</a></td>";
             echo "</tr>";
         }
         ?>

@@ -9,6 +9,6 @@ class TaskResurceModel extends ResourceModel
 {
     public function __construct()
     {
-        $this->_init("tasks","Id", new TaskModel);
+        $this->_init("tasks","Id", new TaskModel());
     }
 }

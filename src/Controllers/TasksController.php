@@ -12,10 +12,6 @@ class TasksController extends Controller
         $taskRepo = new TaskRepository();
         $d['tasks'] = $taskRepo->getall();
         $this->set($d);
-        foreach ($d as $item){
-
-        }
-
         $this->render("index");
     }
 
